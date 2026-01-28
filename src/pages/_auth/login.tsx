@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useForm, FormProvider } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import styles from './login.module.css'
+import styles from './auth-form.module.css'
 import { Form } from '../../components/form'
 
 const loginSchema = z.object({
@@ -50,12 +50,6 @@ function Login() {
             <Form.Label htmlFor="password">Senha</Form.Label>
             <Form.Input id="password" type="password" name="password" placeholder="Digite sua senha" />
             <Form.ErrorMessage field="password" />
-          </Form.Field>
-
-          <Form.Field>
-            <Form.Label htmlFor="name">Nome</Form.Label>
-            <Form.Input id="name" type="text" name="name" placeholder="Digite seu nome" />
-            <Form.ErrorMessage field="name" />
           </Form.Field>
 
           <button 
