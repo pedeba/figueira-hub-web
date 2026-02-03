@@ -5,7 +5,6 @@ export const userApi = {
     const response = await fetch(`${BASE_URL}/me`, {
       credentials: 'include',
     })
-    // 401 = não autenticado, retorna null (não é erro)
     if (response.status === 401) {
       return null
     }

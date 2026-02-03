@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './app'
 import './index.css'
-import './styles/radix.css'
-import { Toast } from 'radix-ui'
+import {Toast} from 'radix-ui'
+import styles from './components/radix/toast.module.css'
 
 const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {
@@ -12,7 +12,7 @@ if (!rootElement.innerHTML) {
     <React.StrictMode>
       <Toast.Provider duration={3000}>
         <App />
-        <Toast.Viewport className="ToastViewport" />
+        <Toast.Viewport className={styles.Viewport} />
       </Toast.Provider>
     </React.StrictMode>
   )

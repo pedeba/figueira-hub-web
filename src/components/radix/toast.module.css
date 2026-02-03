@@ -1,0 +1,118 @@
+/* ========================
+   RADIX UI - Component Styles
+   ======================== */
+
+/* ========================
+   TOAST
+   ======================== */
+
+   .Viewport {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    gap: var(--space-sm);
+    width: 390px;
+    max-width: 100vw;
+    margin: 0;
+    list-style: none;
+    z-index: 9999;
+    outline: none;
+  }
+  
+  .Root {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-md) var(--space-lg);
+    display: grid;
+    grid-template-areas: 'title action' 'description action';
+    grid-template-columns: auto max-content;
+    column-gap: var(--space-md);
+    align-items: center;
+  }
+  
+  .Root[data-state='open'] {
+    animation: toastSlideIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .Root[data-state='closed'] {
+    animation: toastHide 100ms ease-in;
+  }
+  
+  .Root[data-swipe='move'] {
+    transform: translateX(var(--radix-toast-swipe-move-x));
+  }
+  
+  .Root[data-swipe='cancel'] {
+    transform: translateX(0);
+    transition: transform 200ms ease-out;
+  }
+  
+  .Root[data-swipe='end'] {
+    animation: toastSwipeOut 100ms ease-out;
+  }
+  
+  .Root.error {
+    border-left: 4px solid var(--error);
+  }
+  
+  .Root.success {
+    border-left: 4px solid var(--success);
+  }
+  
+  .Root.warning {
+    border-left: 4px solid var(--warning);
+  }
+  
+  .Root.info {
+    border-left: 4px solid var(--info);
+  }
+  
+  .Title {
+    grid-area: title;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+  }
+  
+  .Description {
+    grid-area: description;
+    margin: 0;
+    margin-top: var(--space-xs);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+  
+  .Action {
+    grid-area: action;
+  }
+  
+  @keyframes toastHide {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  @keyframes toastSlideIn {
+    from {
+      transform: translateX(calc(100% + var(--space-lg)));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes toastSwipeOut {
+    from {
+      transform: translateX(var(--radix-toast-swipe-end-x));
+    }
+    to {
+      transform: translateX(calc(100% + var(--space-lg)));
+    }
+  }
+  
+  

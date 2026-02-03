@@ -1,4 +1,5 @@
 import { Toast } from 'radix-ui'
+import styles from './toast.module.css'
 
 type ToastComponentProps = {
   open: boolean
@@ -11,13 +12,13 @@ type ToastComponentProps = {
 export function ToastComponent(props: ToastComponentProps) {
   const { open, onOpenChange, title, description, variant } = props
   return (
-    <Toast.Root 
-      className={`ToastRoot ${variant}`} 
-      open={!!open} 
-      onOpenChange={onOpenChange}
+      <Toast.Root 
+        className={`${styles.Root} ${styles[variant]}`} 
+        open={!!open} 
+        onOpenChange={onOpenChange}
       >
-      <Toast.Title className="ToastTitle">{title}</Toast.Title>
-      <Toast.Description className="ToastDescription">
+      <Toast.Title className={styles.Title}>{title}</Toast.Title>
+      <Toast.Description className={styles.Description}>
         {description}
       </Toast.Description>
     </Toast.Root>

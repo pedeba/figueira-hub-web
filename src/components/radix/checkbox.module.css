@@ -1,0 +1,97 @@
+/* ========================
+   RADIX UI - Checkbox
+   ======================== */
+
+.containerCheckbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.Root {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.Root:hover {
+  border-color: var(--primary);
+}
+
+.Root:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.Root[data-state='checked'] {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.Root[data-state='checked']:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.Root:disabled,
+.Root[data-disabled] {
+  background-color: var(--bg-main);
+  border-color: var(--border);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.Indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: checkboxFadeIn 150ms ease-out;
+}
+
+.Indicator svg {
+  width: 14px;
+  height: 14px;
+}
+
+.Label {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-left: var(--space-sm);
+  user-select: none;
+  transition: color var(--transition-fast);
+}
+
+.Label:hover {
+  color: var(--text-secondary);
+}
+
+/* ========================
+   ANIMATIONS
+   ======================== */
+
+@keyframes checkboxFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

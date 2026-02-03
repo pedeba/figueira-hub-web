@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
+import { createFileRoute, Link, Outlet, redirect } from '@tanstack/react-router'
 import { getAuthUser } from '../lib/auth'
 
 export const Route = createFileRoute('/_app')({
@@ -13,5 +13,13 @@ export const Route = createFileRoute('/_app')({
 })
 
 function AppLayout() {
-  return <Outlet />
+  return (
+    <div>
+      <h1>App Layout</h1>
+      <nav>
+        <Link to="/">Home</Link>
+      </nav>
+      <Outlet />
+    </div>
+  )
 }

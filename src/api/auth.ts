@@ -1,14 +1,14 @@
 const BASE_URL = 'http://localhost:3001/auth'
 
 export const authApi = {
-  login: async ({ email, password }: { email: string; password: string }) => {
+  login: async ({ email, password, remember = false }: { email: string; password: string; remember?: boolean }) => {
     const response = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, remember }),
     })
     if (!response.ok) {
       const {error} = await response.json() as {error: string}

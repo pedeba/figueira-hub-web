@@ -5,11 +5,14 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import styles from './auth-form.module.css'
 import { Form } from '../../components/form'
 import { useAuth } from '../../hooks/use-auth'
-import { ToastComponent } from '../../components/Toast'
+import { ToastComponent } from '../../components/radix/toast'
+import { PasswordToggleField } from '../../components/radix/password-toggle-field'
+import { CheckBox } from '../../components/radix/checkbox'
 
 const loginSchema = z.object({
   email: z.string().nonempty('Email é obrigatório').email('Email inválido'),
   password: z.string().nonempty('Senha é obrigatória').min(6, 'Senha deve ter pelo menos 6 caracteres'),
+  remember: z.boolean().optional(),
 })
 
 export const Route = createFileRoute('/_auth/login')({
@@ -60,9 +63,11 @@ function Login() {
 
           <Form.Field>
             <Form.Label htmlFor="password">Senha</Form.Label>
-            <Form.Input id="password" type="password" name="password" placeholder="Digite sua senha" />
+            <PasswordToggleField id="password" name="password" placeholder="Digite sua senha" />
             <Form.ErrorMessage field="password" />
           </Form.Field>
+
+          <CheckBox id="remember" label="Lembrar-me" name="remember" />
 
           <button 
             type="submit" 
