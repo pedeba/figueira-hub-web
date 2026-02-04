@@ -75,13 +75,13 @@ function Login() {
       <FormProvider {...createLoginForm}>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <Form.Field>
-            <Form.Label htmlFor="email">Email</Form.Label>
+            <Form.Label className={styles.label} htmlFor="email">Email</Form.Label>
             <Form.Input id="email" type="email" name="email" placeholder="Digite seu email" />
             <Form.ErrorMessage field="email" />
           </Form.Field>
 
           <Form.Field>
-            <Form.Label htmlFor="password">Senha</Form.Label>
+            <Form.Label className={styles.label} htmlFor="password">Senha</Form.Label>
             <PasswordToggleField id="password" name="password" placeholder="Digite sua senha" />
             <Form.ErrorMessage field="password" />
           </Form.Field>
@@ -97,7 +97,7 @@ function Login() {
           </button>
         </form>
       </FormProvider>
-      <span>
+      <span className={styles.link}>
         Não tem uma conta? <Link to="/register">Cadastre-se</Link>
       </span>
 

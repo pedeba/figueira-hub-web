@@ -13,7 +13,7 @@ html {
   --bg-main: #F9FAFB;
   --bg-surface: #FFFFFF;
   --border: #E5E7EB;
-  --border-focus: #93C5FD;
+  --border-focus: #87ff87;
 
   /* 📝 Texto */
   --text-primary: #111827;
@@ -22,10 +22,10 @@ html {
   --text-placeholder: #9CA3AF;
 
   /* 🎯 Ação / Marca */
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --primary-active: #1E40AF;
-  --focus-ring: #93C5FD;
+  --primary: #2E8B2E;
+  --primary-hover: #3DA83D;
+  --primary-active: #247524;
+  --focus-ring: #96ff96;
 
   /* 💰 Financeiro */
   --income: #16A34A;
@@ -77,22 +77,22 @@ html {
 /* 🌚 DARK MODE */
 html.dark {
   /* 🧱 Base */
-  --bg-main: #0F172A;
-  --bg-surface: #1E293B;
-  --border: #334155;
-  --border-focus: #60A5FA;
+  --bg-main: #131313;
+  --bg-surface: #1B1B1B;
+  --border: #2A2A2A;
+  --border-focus: #66BB66;
 
   /* 📝 Texto */
-  --text-primary: #F8FAFC;
-  --text-secondary: #CBD5E1;
-  --text-disabled: #64748B;
-  --text-placeholder: #64748B;
+  --text-primary: #F5F5F5;
+  --text-secondary: #B5B5B5;
+  --text-disabled: #7A7A7A;
+  --text-placeholder: #7A7A7A;
 
   /* 🎯 Ação / Marca */
-  --primary: #3B82F6;
-  --primary-hover: #60A5FA;
-  --primary-active: #2563EB;
-  --focus-ring: #60A5FA;
+  --primary: #4CAF4C;
+  --primary-hover: #66BB66;
+  --primary-active: #3D8B3D;
+  --focus-ring: #0a380a;
 
   /* 💰 Financeiro */
   --income: #22C55E;

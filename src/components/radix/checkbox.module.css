@@ -15,7 +15,7 @@
   justify-content: center;
   width: 15px;
   height: 15px;
-  background-color: var(--bg-surface);
+  background-color: #fff;
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -69,15 +69,11 @@
 .Label {
   font-size: var(--font-size-sm);
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   cursor: pointer;
   margin-left: var(--space-sm);
   user-select: none;
   transition: color var(--transition-fast);
-}
-
-.Label:hover {
-  color: var(--text-secondary);
 }
 
 /* ========================
