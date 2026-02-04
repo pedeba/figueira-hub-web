@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: green;
   animation: checkboxFadeIn 150ms ease-out;
 }
 
