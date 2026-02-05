@@ -19,11 +19,12 @@ export function useAuth() {
   const loginMutation = useMutation({
     mutationFn: authApi.login,
     onSuccess: async () => {
-      await queryClient.fetchQuery({ 
+      const user = await queryClient.fetchQuery<IUser>({ 
         queryKey: ['user'], 
         queryFn: userApi.getUser,
       })
-      navigate({ to: '/' })
+      
+      navigate({ to: user?.role === 'admin' ? '/admin' : '.' })
     },
   })
 

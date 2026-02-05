@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
-import styles from './_auth.module.css'
-import { getAuthUser } from '../lib/auth'
+import styles from './route.module.css'
+import { getAuthUser } from '../../lib/auth'
 
 export const Route = createFileRoute('/_auth')({
   beforeLoad: async ({ context }) => {
