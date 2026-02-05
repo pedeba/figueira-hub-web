@@ -1,6 +1,8 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
 import { getAuthUser } from '../../lib/auth'
 import { Outlet } from '@tanstack/react-router'
+import { Sidebar } from '../../components/sidebar/index'
+import { Home, Volleyball, Users, ClipboardList } from 'lucide-react'
 
 export const Route = createFileRoute('/admin')({
   component: RouteComponent,
@@ -19,7 +21,18 @@ export const Route = createFileRoute('/admin')({
 
 function RouteComponent() {
   return (
-    <div>
+    <div className="container">
+      <Sidebar.Root>
+        <Sidebar.Brand logo="/test.svg" />
+        <Sidebar.Nav>
+          <Sidebar.NavList>
+            <Sidebar.NavLink to="/admin" icon={<Home size={18} />} text="Home" />
+            <Sidebar.NavLink to="/admin" icon={<Volleyball size={18} />} text="Partidas" />
+            <Sidebar.NavLink to="/admin" icon={<Users size={18} />} text="Jogadores" />
+            <Sidebar.NavLink to="/admin" icon={<ClipboardList size={18} />} text="Escalações" />
+          </Sidebar.NavList>
+        </Sidebar.Nav>
+      </Sidebar.Root>
       <div>Admin Layout</div>
       <Outlet />
     </div>

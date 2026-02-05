@@ -372,6 +372,14 @@ button:disabled,
   margin-top: var(--space-xs);
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  gap: var(--space-xl);
+}
+
 /* ========================
    UTILITY CLASSES
    ======================== */
@@ -454,6 +462,16 @@ button:disabled,
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: var(--space-sm);
 }
 
 /* ========================

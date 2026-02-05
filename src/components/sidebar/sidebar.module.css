@@ -1,0 +1,95 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+/* Brand Section */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-xl);
+}
+
+.logo {
+  width: 44px;
+  height: auto;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  overflow-y: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.navLink:hover {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navText {
+  flex: 1;
+  font-size: var(--font-size-lg);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 72px;
+    min-width: 72px;
+  }
+
+  .brand {
+    padding: var(--space-md);
+    justify-content: center;
+  }
+
+  .nav {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: var(--space-sm);
+  }
+
+  .navText {
+    display: none;
+  }
+}
