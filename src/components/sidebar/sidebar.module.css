@@ -56,6 +56,12 @@
   text-decoration: none;
 }
 
+.navLink.active {
+  background-color: var(--border-focus);
+  color: var(--on-primary);
+  text-decoration: none;
+}
+
 .navIcon {
   display: flex;
   align-items: center;

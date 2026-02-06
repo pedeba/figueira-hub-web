@@ -2,7 +2,14 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Table } from '../../components/table'
 import {keepPreviousData, useQuery} from '@tanstack/react-query'
 import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter'
+import { EllipsisVerticalIcon, PencilIcon, PlusIcon, TrashIcon } from 'lucide-react'
 import { z } from 'zod'
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuItem
+} from "../../components/radix/dropdown-menu";
 
 const matchesSearchSchema = z.object({
   _page: fallback(z.number(), 1).default(1),
@@ -36,6 +43,9 @@ function Matches() {
     <div className="content-container">
       <h1>Partidas</h1>
       <div className='mt-4'>
+        <button className='btn-secondary mb-4'>
+          <PlusIcon size={16} /> Criar Partida
+        </button>
         <Table.Root>
           <Table.Head>
             <Table.Row>
@@ -43,6 +53,7 @@ function Matches() {
               <Table.Cell>status</Table.Cell>
               <Table.Cell>Em Casa</Table.Cell>
               <Table.Cell>Data da Partida</Table.Cell>
+              <Table.Cell>Ações</Table.Cell>
             </Table.Row>
           </Table.Head>
           <Table.Body>
@@ -52,12 +63,21 @@ function Matches() {
                 <Table.Cell>{match.status}</Table.Cell>
                 <Table.Cell>{match.is_home ? 'Sim' : 'Não'}</Table.Cell>
                 <Table.Cell>{match.match_date}</Table.Cell>
+                <Table.Cell>
+                <DropdownMenu>
+                  <DropdownMenuTrigger><EllipsisVerticalIcon size={16} /></DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem><PencilIcon size={16} /> Editar</DropdownMenuItem>
+                    <DropdownMenuItem variant="danger"><TrashIcon size={16} /> Excluir</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
           <Table.Footer>
             <Table.Row>
-              <Table.Cell colSpan={4}>
+              <Table.Cell colSpan={5}>
                 {isFetching ? <div>Carregando...</div> : <Table.Pagination page={_page}/>}
               </Table.Cell>
             </Table.Row>

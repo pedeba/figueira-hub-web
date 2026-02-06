@@ -27,22 +27,22 @@ export function TablePagination({ page }: { page: number }) {
       </div>
       <div className={styles.paginationButtons}>
         <Tooltip content="Primeira página">
-          <button onClick={handleFirstPage}>
+          <button onClick={handleFirstPage} className='btn-secondary'>
             <ChevronsLeft size={16} />
           </button>
         </Tooltip>
         <Tooltip content="Página anterior">
-          <button onClick={handleBackPage}>
+          <button onClick={handleBackPage} className='btn-secondary'>
             <ChevronLeft size={16} />
           </button>
         </Tooltip>
         <Tooltip content="Próxima página">
-          <button onClick={handleNextPage}>
+          <button onClick={handleNextPage} className='btn-secondary'>
             <ChevronRight size={16} />
           </button>
         </Tooltip>
         <Tooltip content="Última página">
-          <button onClick={handleLastPage}>
+          <button onClick={handleLastPage} className='btn-secondary'>
             <ChevronsRight size={16} />
           </button>
         </Tooltip>

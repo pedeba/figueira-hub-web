@@ -1,0 +1,115 @@
+/* ========================
+   DROPDOWN MENU COMPONENT
+   ======================== */
+
+/* Content (container do menu) */
+.content {
+  min-width: 150px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-xs);
+  z-index: 9999;
+
+  /* Animação */
+  animation: dropdownFadeIn var(--transition-fast);
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+
+/* Arrow */
+.arrow {
+  fill: var(--bg-surface);
+  stroke: var(--border);
+  stroke-width: 1px;
+}
+
+/* Item */
+.item {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+.item[data-highlighted] {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  outline: none;
+}
+
+.item[data-disabled] {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Item Danger */
+.itemDanger {
+  color: var(--error);
+}
+
+.itemDanger[data-highlighted] {
+  border: 1px solid var(--error);
+  color: var(--error);
+  background-color: transparent;
+}
+
+/* Trigger */
+.trigger {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+.trigger:hover {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.trigger:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.trigger[data-state='open'] {
+  background-color: var(--bg-main);
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+/* ========================
+   ANIMATIONS
+   ======================== */
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
