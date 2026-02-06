@@ -1,4 +1,4 @@
-/* Login Page Styles */
+/* Auth Form Styles */
 
 .container {
   display: flex;
@@ -13,6 +13,7 @@
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .link {
@@ -20,6 +21,16 @@
   font-size: var(--font-size-sm);
   font-weight: 500;
   margin-top: var(--space-sm);
+}
+
+.link a {
+  color: var(--accent);
+  transition: color var(--transition-fast);
+}
+
+.link a:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
 }
 
 .checkbox {
@@ -46,6 +57,42 @@
   margin-top: var(--space-sm);
   font-size: var(--font-size-base);
   font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
 }
 
+.submitButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
 
+.submitButton:hover {
+  background: var(--accent-hover);
+  box-shadow: 
+    0 4px 15px rgba(34, 197, 94, 0.3),
+    0 0 30px rgba(34, 197, 94, 0.1);
+  transform: translateY(-1px);
+}
+
+.submitButton:hover::before {
+  opacity: 1;
+}
+
+.submitButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.submitButton:disabled {
+  background: var(--text-disabled);
+  box-shadow: none;
+  transform: none;
+}

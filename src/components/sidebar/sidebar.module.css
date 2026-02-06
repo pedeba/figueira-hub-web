@@ -1,65 +1,137 @@
+/* ========================
+   SIDEBAR - Modern Glass Design
+   ======================== */
+
 .sidebar {
   width: 280px;
   min-width: 280px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-surface);
+  background: var(--bg-surface);
   border-right: 1px solid var(--border);
   position: sticky;
   top: 0;
+  z-index: 10;
+  /* Subtle inner glow */
+  box-shadow: inset -1px 0 0 rgba(34, 197, 94, 0.03);
 }
 
 /* Brand Section */
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-md) var(--space-xl);
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* Subtle green glow behind logo */
+.brand::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
 }
 
 .logo {
   width: 44px;
   height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.2));
+  transition: filter var(--transition-base);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.4));
 }
 
 /* Navigation */
 .nav {
   flex: 1;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md);
   overflow-y: auto;
 }
 
 .navList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 2px;
 }
 
 .navLink {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
+  padding: 10px var(--space-md);
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   text-decoration: none;
   font-size: var(--font-size-sm);
   font-weight: 500;
   position: relative;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-base);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+/* Shine effect on hover */
+.navLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  border-radius: inherit;
 }
 
 .navLink:hover {
-  background-color: var(--bg-main);
+  background-color: var(--accent-subtle);
+  border-color: var(--accent-border);
   color: var(--text-primary);
   text-decoration: none;
+  transform: translateX(2px);
+}
+
+.navLink:hover::before {
+  opacity: 1;
 }
 
 .navLink.active {
-  background-color: var(--border-focus);
-  color: var(--on-primary);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(34, 197, 94, 0.04) 100%);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: var(--accent);
   text-decoration: none;
+  box-shadow: 
+    0 0 15px rgba(34, 197, 94, 0.08),
+    inset 0 0 15px rgba(34, 197, 94, 0.03);
+}
+
+.navLink.active::before {
+  opacity: 1;
+}
+
+/* Green indicator bar on active */
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
 }
 
 .navIcon {
@@ -67,11 +139,25 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-fast);
+}
+
+.navLink:hover .navIcon {
+  transform: scale(1.1);
+}
+
+.navLink.active .navIcon {
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.4));
 }
 
 .navText {
   flex: 1;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.01em;
 }
 
 /* Responsivo */

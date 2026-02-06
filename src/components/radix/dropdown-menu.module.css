@@ -1,20 +1,36 @@
 /* ========================
-   DROPDOWN MENU COMPONENT
+   DROPDOWN MENU - Modern Glass Design
    ======================== */
 
 /* Content (container do menu) */
 .content {
-  min-width: 150px;
+  min-width: 160px;
   background-color: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 
+    var(--shadow-xl),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
   padding: var(--space-xs);
   z-index: 9999;
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  position: relative;
 
   /* Animação */
-  animation: dropdownFadeIn var(--transition-fast);
+  animation: dropdownFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+
+/* Subtle top accent */
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
 }
 
 /* Arrow */
@@ -30,20 +46,23 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
+  padding: 8px var(--space-md);
   font-size: var(--font-size-sm);
   color: var(--text-primary);
   border-radius: var(--radius-md);
   cursor: pointer;
   user-select: none;
-  transition: background-color var(--transition-fast),
-              color var(--transition-fast);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
 .item[data-highlighted] {
-  background-color: var(--primary);
-  color: var(--on-primary);
+  background: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 100%);
+  color: var(--accent);
   outline: none;
+  border-left: 2px solid var(--accent);
+  padding-left: calc(var(--space-md) - 2px);
 }
 
 .item[data-disabled] {
@@ -58,9 +77,9 @@
 }
 
 .itemDanger[data-highlighted] {
-  border: 1px solid var(--error);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, transparent 100%);
   color: var(--error);
-  background-color: transparent;
+  border-left: 2px solid var(--error);
 }
 
 /* Trigger */
@@ -77,26 +96,27 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color var(--transition-fast),
-              border-color var(--transition-fast),
-              color var(--transition-fast);
+  transition: all var(--transition-base);
 }
 
 .trigger:hover {
-  background-color: var(--bg-main);
-  color: var(--text-primary);
+  background-color: var(--accent-subtle);
+  border-color: var(--accent-border);
+  color: var(--accent);
+  box-shadow: var(--glow-green-sm, 0 0 10px rgba(34, 197, 94, 0.1));
 }
 
 .trigger:focus-visible {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .trigger[data-state='open'] {
-  background-color: var(--bg-main);
-  border-color: var(--primary);
-  color: var(--text-primary);
+  background-color: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--glow-green-sm, 0 0 10px rgba(34, 197, 94, 0.1));
 }
 
 /* ========================
@@ -106,7 +126,7 @@
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(-4px);
+    transform: scale(0.96) translateY(-6px);
   }
   to {
     opacity: 1;

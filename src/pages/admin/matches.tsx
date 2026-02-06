@@ -43,7 +43,7 @@ function Matches() {
     <div className="content-container">
       <h1>Partidas</h1>
       <div className='mt-4'>
-        <button className='btn-secondary mb-4'>
+        <button className='btn-accent mb-4'>
           <PlusIcon size={16} /> Criar Partida
         </button>
         <Table.Root>
