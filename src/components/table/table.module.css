@@ -1,0 +1,96 @@
+/* ========================
+   TABLE COMPONENT
+   ======================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: var(--font-size-sm);
+}
+
+/* Header */
+.tableHead {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border);
+}
+
+.tableHeaderCell {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Body */
+.tableBody {
+  background-color: var(--bg-surface);
+}
+
+/* Row */
+.tableRow {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition-fast);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableBody .tableRow:hover {
+  background-color: var(--bg-main);
+}
+
+.paginationButtons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Cell */
+.tableCell {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* Footer */
+.tableFooter {
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border);
+}
+
+.tableFooter td {
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.tablePagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+
+@media (max-width: 768px) {
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  .tableHead th,
+  .tableCell,
+  .tableFooter td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
