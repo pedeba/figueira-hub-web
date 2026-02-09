@@ -1,15 +1,15 @@
-import { Checkbox } from "radix-ui";
-import { Check } from "lucide-react";
-import styles from "./checkbox.module.css";
-import { useFormContext, Controller } from "react-hook-form";
+import { Checkbox } from 'radix-ui';
+import { Check } from 'lucide-react';
+import styles from './checkbox.module.css';
+import { useFormContext, Controller } from 'react-hook-form';
 
 type CheckBoxProps = {
-  label: string,
-  id: string,
-  name: string,
-}
+  label: string;
+  id: string;
+  name: string;
+};
 
-export function CheckBox({id, label, name}: CheckBoxProps) {
+export function CheckBox({ id, label, name }: CheckBoxProps) {
   const { control } = useFormContext();
   return (
     <Controller
@@ -18,9 +18,9 @@ export function CheckBox({id, label, name}: CheckBoxProps) {
       defaultValue={false}
       render={({ field }) => (
         <div className={styles.containerCheckbox}>
-          <Checkbox.Root 
-            className={styles.Root} 
-            id={id} 
+          <Checkbox.Root
+            className={styles.Root}
+            id={id}
             checked={field.value}
             onCheckedChange={field.onChange}
           >
@@ -34,5 +34,5 @@ export function CheckBox({id, label, name}: CheckBoxProps) {
         </div>
       )}
     />
-  )
+  );
 }

@@ -1,17 +1,16 @@
-import { useFormContext } from "react-hook-form"
+import { useFormContext } from 'react-hook-form';
 
 type ErrorMessageProps = {
-  field: string
-}
+  field: string;
+};
 
-export function ErrorMessage({field}: ErrorMessageProps) {
+export function ErrorMessage({ field }: ErrorMessageProps) {
+  const {
+    formState: { errors },
+  } = useFormContext();
 
-  const { formState: { errors } } = useFormContext()
+  const error = errors[field];
 
-  const error = errors[field]
-
-  if (!error) return null
-  return (
-    <span className="form-error">{error.message?.toString()}</span>
-  )
+  if (!error) return null;
+  return <span className="form-error">{error.message?.toString()}</span>;
 }

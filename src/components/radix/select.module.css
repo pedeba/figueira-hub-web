@@ -31,12 +31,16 @@
 .Trigger:focus-visible,
 .Trigger:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow), var(--glow-sm, none);
+  box-shadow:
+    0 0 0 3px var(--accent-glow),
+    var(--glow-sm, none);
 }
 
 .Trigger[data-state='open'] {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow), var(--glow-sm, none);
+  box-shadow:
+    0 0 0 3px var(--accent-glow),
+    var(--glow-sm, none);
 }
 
 .Trigger[data-placeholder] {
@@ -55,7 +59,9 @@
   align-items: center;
   color: var(--text-secondary);
   flex-shrink: 0;
-  transition: transform var(--transition-base), color var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    color var(--transition-base);
 }
 
 .Icon svg {
@@ -74,7 +80,7 @@
   background-color: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 
+  box-shadow:
     var(--shadow-xl),
     0 0 0 1px rgba(255, 255, 255, 0.04);
   padding: var(--space-xs);
@@ -94,7 +100,12 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(228, 228, 231, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(228, 228, 231, 0.2),
+    transparent
+  );
 }
 
 /* Viewport */
@@ -121,7 +132,11 @@
 }
 
 .Item[data-highlighted] {
-  background: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-subtle) 0%,
+    transparent 100%
+  );
   color: var(--accent);
   outline: none;
   border-left: 2px solid var(--accent);
@@ -198,4 +213,3 @@
     transform: scale(1);
   }
 }
-

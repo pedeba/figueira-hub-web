@@ -8,16 +8,16 @@ Este é um projeto de estudo focado em consolidar conhecimentos em desenvolvimen
 
 ## 🚀 Tecnologias
 
-| Tecnologia | Versão | Descrição |
-|------------|--------|-----------|
-| [React](https://react.dev/) | 19.2 | Biblioteca para construção de interfaces |
-| [TypeScript](https://www.typescriptlang.org/) | 5.9 | Superset tipado do JavaScript |
-| [Vite](https://vite.dev/) | 7.2 | Build tool e dev server ultrarrápido |
-| [TanStack Router](https://tanstack.com/router) | 1.157 | Roteamento type-safe para React |
-| [React Hook Form](https://react-hook-form.com/) | 7.71 | Gerenciamento de formulários performático |
-| [Zod](https://zod.dev/) | 4.3 | Validação de schemas com TypeScript |
-| [ESLint](https://eslint.org/) | 9.39 | Linter para identificar problemas no código |
-| [Prettier](https://prettier.io/) | 3.8 | Formatador de código |
+| Tecnologia                                      | Versão | Descrição                                   |
+| ----------------------------------------------- | ------ | ------------------------------------------- |
+| [React](https://react.dev/)                     | 19.2   | Biblioteca para construção de interfaces    |
+| [TypeScript](https://www.typescriptlang.org/)   | 5.9    | Superset tipado do JavaScript               |
+| [Vite](https://vite.dev/)                       | 7.2    | Build tool e dev server ultrarrápido        |
+| [TanStack Router](https://tanstack.com/router)  | 1.157  | Roteamento type-safe para React             |
+| [React Hook Form](https://react-hook-form.com/) | 7.71   | Gerenciamento de formulários performático   |
+| [Zod](https://zod.dev/)                         | 4.3    | Validação de schemas com TypeScript         |
+| [ESLint](https://eslint.org/)                   | 9.39   | Linter para identificar problemas no código |
+| [Prettier](https://prettier.io/)                | 3.8    | Formatador de código                        |
 
 ## 📁 Estrutura do Projeto
 

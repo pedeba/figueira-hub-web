@@ -8,86 +8,86 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './pages/__root'
-import { Route as AdminRouteRouteImport } from './pages/admin/route'
-import { Route as AuthRouteRouteImport } from './pages/_auth/route'
-import { Route as AppRouteRouteImport } from './pages/_app/route'
-import { Route as AuthRegisterRouteImport } from './pages/_auth/register'
-import { Route as AuthLoginRouteImport } from './pages/_auth/login'
-import { Route as AdminMatchesIndexRouteImport } from './pages/admin/matches.index'
-import { Route as AdminMatchesCreateRouteImport } from './pages/admin/matches.create'
-import { Route as AdminMatchesMatchEditRouteImport } from './pages/admin/matches.$match.edit'
+import { Route as rootRouteImport } from './pages/__root';
+import { Route as AdminRouteRouteImport } from './pages/admin/route';
+import { Route as AuthRouteRouteImport } from './pages/_auth/route';
+import { Route as AppRouteRouteImport } from './pages/_app/route';
+import { Route as AuthRegisterRouteImport } from './pages/_auth/register';
+import { Route as AuthLoginRouteImport } from './pages/_auth/login';
+import { Route as AdminMatchesIndexRouteImport } from './pages/admin/matches.index';
+import { Route as AdminMatchesCreateRouteImport } from './pages/admin/matches.create';
+import { Route as AdminMatchesMatchEditRouteImport } from './pages/admin/matches.$match.edit';
 
 const AdminRouteRoute = AdminRouteRouteImport.update({
   id: '/admin',
   path: '/admin',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AuthRouteRoute = AuthRouteRouteImport.update({
   id: '/_auth',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AppRouteRoute = AppRouteRouteImport.update({
   id: '/_app',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AuthRegisterRoute = AuthRegisterRouteImport.update({
   id: '/register',
   path: '/register',
   getParentRoute: () => AuthRouteRoute,
-} as any)
+} as any);
 const AuthLoginRoute = AuthLoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => AuthRouteRoute,
-} as any)
+} as any);
 const AdminMatchesIndexRoute = AdminMatchesIndexRouteImport.update({
   id: '/matches/',
   path: '/matches/',
   getParentRoute: () => AdminRouteRoute,
-} as any)
+} as any);
 const AdminMatchesCreateRoute = AdminMatchesCreateRouteImport.update({
   id: '/matches/create',
   path: '/matches/create',
   getParentRoute: () => AdminRouteRoute,
-} as any)
+} as any);
 const AdminMatchesMatchEditRoute = AdminMatchesMatchEditRouteImport.update({
   id: '/matches/$match/edit',
   path: '/matches/$match/edit',
   getParentRoute: () => AdminRouteRoute,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof AuthRouteRouteWithChildren
-  '/admin': typeof AdminRouteRouteWithChildren
-  '/login': typeof AuthLoginRoute
-  '/register': typeof AuthRegisterRoute
-  '/admin/matches/create': typeof AdminMatchesCreateRoute
-  '/admin/matches/': typeof AdminMatchesIndexRoute
-  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute
+  '/': typeof AuthRouteRouteWithChildren;
+  '/admin': typeof AdminRouteRouteWithChildren;
+  '/login': typeof AuthLoginRoute;
+  '/register': typeof AuthRegisterRoute;
+  '/admin/matches/create': typeof AdminMatchesCreateRoute;
+  '/admin/matches/': typeof AdminMatchesIndexRoute;
+  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof AuthRouteRouteWithChildren
-  '/admin': typeof AdminRouteRouteWithChildren
-  '/login': typeof AuthLoginRoute
-  '/register': typeof AuthRegisterRoute
-  '/admin/matches/create': typeof AdminMatchesCreateRoute
-  '/admin/matches': typeof AdminMatchesIndexRoute
-  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute
+  '/': typeof AuthRouteRouteWithChildren;
+  '/admin': typeof AdminRouteRouteWithChildren;
+  '/login': typeof AuthLoginRoute;
+  '/register': typeof AuthRegisterRoute;
+  '/admin/matches/create': typeof AdminMatchesCreateRoute;
+  '/admin/matches': typeof AdminMatchesIndexRoute;
+  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/_app': typeof AppRouteRoute
-  '/_auth': typeof AuthRouteRouteWithChildren
-  '/admin': typeof AdminRouteRouteWithChildren
-  '/_auth/login': typeof AuthLoginRoute
-  '/_auth/register': typeof AuthRegisterRoute
-  '/admin/matches/create': typeof AdminMatchesCreateRoute
-  '/admin/matches/': typeof AdminMatchesIndexRoute
-  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute
+  __root__: typeof rootRouteImport;
+  '/_app': typeof AppRouteRoute;
+  '/_auth': typeof AuthRouteRouteWithChildren;
+  '/admin': typeof AdminRouteRouteWithChildren;
+  '/_auth/login': typeof AuthLoginRoute;
+  '/_auth/register': typeof AuthRegisterRoute;
+  '/admin/matches/create': typeof AdminMatchesCreateRoute;
+  '/admin/matches/': typeof AdminMatchesIndexRoute;
+  '/admin/matches/$match/edit': typeof AdminMatchesMatchEditRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | '/'
     | '/admin'
@@ -95,8 +95,8 @@ export interface FileRouteTypes {
     | '/register'
     | '/admin/matches/create'
     | '/admin/matches/'
-    | '/admin/matches/$match/edit'
-  fileRoutesByTo: FileRoutesByTo
+    | '/admin/matches/$match/edit';
+  fileRoutesByTo: FileRoutesByTo;
   to:
     | '/'
     | '/admin'
@@ -104,7 +104,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/admin/matches/create'
     | '/admin/matches'
-    | '/admin/matches/$match/edit'
+    | '/admin/matches/$match/edit';
   id:
     | '__root__'
     | '/_app'
@@ -114,111 +114,111 @@ export interface FileRouteTypes {
     | '/_auth/register'
     | '/admin/matches/create'
     | '/admin/matches/'
-    | '/admin/matches/$match/edit'
-  fileRoutesById: FileRoutesById
+    | '/admin/matches/$match/edit';
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  AppRouteRoute: typeof AppRouteRoute
-  AuthRouteRoute: typeof AuthRouteRouteWithChildren
-  AdminRouteRoute: typeof AdminRouteRouteWithChildren
+  AppRouteRoute: typeof AppRouteRoute;
+  AuthRouteRoute: typeof AuthRouteRouteWithChildren;
+  AdminRouteRoute: typeof AdminRouteRouteWithChildren;
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/admin';
+      path: '/admin';
+      fullPath: '/admin';
+      preLoaderRoute: typeof AdminRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/_auth': {
-      id: '/_auth'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/_auth';
+      path: '';
+      fullPath: '/';
+      preLoaderRoute: typeof AuthRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/_app': {
-      id: '/_app'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AppRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/_app';
+      path: '';
+      fullPath: '/';
+      preLoaderRoute: typeof AppRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/_auth/register': {
-      id: '/_auth/register'
-      path: '/register'
-      fullPath: '/register'
-      preLoaderRoute: typeof AuthRegisterRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
+      id: '/_auth/register';
+      path: '/register';
+      fullPath: '/register';
+      preLoaderRoute: typeof AuthRegisterRouteImport;
+      parentRoute: typeof AuthRouteRoute;
+    };
     '/_auth/login': {
-      id: '/_auth/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
-      parentRoute: typeof AuthRouteRoute
-    }
+      id: '/_auth/login';
+      path: '/login';
+      fullPath: '/login';
+      preLoaderRoute: typeof AuthLoginRouteImport;
+      parentRoute: typeof AuthRouteRoute;
+    };
     '/admin/matches/': {
-      id: '/admin/matches/'
-      path: '/matches'
-      fullPath: '/admin/matches/'
-      preLoaderRoute: typeof AdminMatchesIndexRouteImport
-      parentRoute: typeof AdminRouteRoute
-    }
+      id: '/admin/matches/';
+      path: '/matches';
+      fullPath: '/admin/matches/';
+      preLoaderRoute: typeof AdminMatchesIndexRouteImport;
+      parentRoute: typeof AdminRouteRoute;
+    };
     '/admin/matches/create': {
-      id: '/admin/matches/create'
-      path: '/matches/create'
-      fullPath: '/admin/matches/create'
-      preLoaderRoute: typeof AdminMatchesCreateRouteImport
-      parentRoute: typeof AdminRouteRoute
-    }
+      id: '/admin/matches/create';
+      path: '/matches/create';
+      fullPath: '/admin/matches/create';
+      preLoaderRoute: typeof AdminMatchesCreateRouteImport;
+      parentRoute: typeof AdminRouteRoute;
+    };
     '/admin/matches/$match/edit': {
-      id: '/admin/matches/$match/edit'
-      path: '/matches/$match/edit'
-      fullPath: '/admin/matches/$match/edit'
-      preLoaderRoute: typeof AdminMatchesMatchEditRouteImport
-      parentRoute: typeof AdminRouteRoute
-    }
+      id: '/admin/matches/$match/edit';
+      path: '/matches/$match/edit';
+      fullPath: '/admin/matches/$match/edit';
+      preLoaderRoute: typeof AdminMatchesMatchEditRouteImport;
+      parentRoute: typeof AdminRouteRoute;
+    };
   }
 }
 
 interface AuthRouteRouteChildren {
-  AuthLoginRoute: typeof AuthLoginRoute
-  AuthRegisterRoute: typeof AuthRegisterRoute
+  AuthLoginRoute: typeof AuthLoginRoute;
+  AuthRegisterRoute: typeof AuthRegisterRoute;
 }
 
 const AuthRouteRouteChildren: AuthRouteRouteChildren = {
   AuthLoginRoute: AuthLoginRoute,
   AuthRegisterRoute: AuthRegisterRoute,
-}
+};
 
 const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
   AuthRouteRouteChildren,
-)
+);
 
 interface AdminRouteRouteChildren {
-  AdminMatchesCreateRoute: typeof AdminMatchesCreateRoute
-  AdminMatchesIndexRoute: typeof AdminMatchesIndexRoute
-  AdminMatchesMatchEditRoute: typeof AdminMatchesMatchEditRoute
+  AdminMatchesCreateRoute: typeof AdminMatchesCreateRoute;
+  AdminMatchesIndexRoute: typeof AdminMatchesIndexRoute;
+  AdminMatchesMatchEditRoute: typeof AdminMatchesMatchEditRoute;
 }
 
 const AdminRouteRouteChildren: AdminRouteRouteChildren = {
   AdminMatchesCreateRoute: AdminMatchesCreateRoute,
   AdminMatchesIndexRoute: AdminMatchesIndexRoute,
   AdminMatchesMatchEditRoute: AdminMatchesMatchEditRoute,
-}
+};
 
 const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
   AdminRouteRouteChildren,
-)
+);
 
 const rootRouteChildren: RootRouteChildren = {
   AppRouteRoute: AppRouteRoute,
   AuthRouteRoute: AuthRouteRouteWithChildren,
   AdminRouteRoute: AdminRouteRouteWithChildren,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();

@@ -31,7 +31,9 @@
 .Root:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow), var(--glow-sm, none);
+  box-shadow:
+    0 0 0 3px var(--accent-glow),
+    var(--glow-sm, none);
 }
 
 .Root[data-state='checked'] {

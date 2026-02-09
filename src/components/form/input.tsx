@@ -1,15 +1,13 @@
-import { useFormContext } from "react-hook-form"
+import { useFormContext } from 'react-hook-form';
 
-import type { ComponentProps } from "react"
+import type { ComponentProps } from 'react';
 
 type InputProps = ComponentProps<'input'> & {
-  name: string
-}
+  name: string;
+};
 
 export function Input(props: InputProps) {
-  const { register } = useFormContext()
+  const { register } = useFormContext();
 
-  return (
-    <input {...props} {...register(props.name)}/>
-  )
+  return <input {...props} {...register(props.name)} />;
 }

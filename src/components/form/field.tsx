@@ -1,9 +1,7 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from 'react';
 
-type FieldProps = ComponentProps<'div'> 
+type FieldProps = ComponentProps<'div'>;
 
 export function Field(props: FieldProps) {
-  return (
-    <div className="form-group" {...props}/>
-  )
+  return <div className="form-group" {...props} />;
 }

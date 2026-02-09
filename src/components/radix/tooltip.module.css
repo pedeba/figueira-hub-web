@@ -10,14 +10,14 @@
   font-weight: 500;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  box-shadow: 
+  box-shadow:
     var(--shadow-lg),
     0 0 0 1px rgba(255, 255, 255, 0.04);
   max-width: 250px;
   line-height: 1.4;
   z-index: 9999;
   backdrop-filter: blur(12px);
-  
+
   /* Animação */
   animation: tooltipFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: var(--radix-tooltip-content-transform-origin);

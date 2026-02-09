@@ -69,14 +69,18 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 50%
+  );
   opacity: 0;
   transition: opacity var(--transition-base);
 }
 
 .submitButton:hover {
   background: var(--accent-hover);
-  box-shadow: 
+  box-shadow:
     0 4px 15px rgba(228, 228, 231, 0.2),
     0 0 30px rgba(228, 228, 231, 0.08);
   transform: translateY(-1px);

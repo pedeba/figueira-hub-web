@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import styles from "./sidebar.module.css";
+import { Link } from '@tanstack/react-router';
+import styles from './sidebar.module.css';
 
 interface SidebarNavLinkProps {
   to: string;
@@ -8,7 +8,12 @@ interface SidebarNavLinkProps {
   exact?: boolean;
 }
 
-export function NavLink({to, icon, text, exact = false}: SidebarNavLinkProps) {
+export function NavLink({
+  to,
+  icon,
+  text,
+  exact = false,
+}: SidebarNavLinkProps) {
   return (
     <li key={to}>
       <Link
@@ -21,5 +26,5 @@ export function NavLink({to, icon, text, exact = false}: SidebarNavLinkProps) {
         <span className={styles.navText}>{text}</span>
       </Link>
     </li>
-  )
+  );
 }

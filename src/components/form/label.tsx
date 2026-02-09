@@ -1,9 +1,7 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from 'react';
 
-type LabelProps = ComponentProps<'label'> 
+type LabelProps = ComponentProps<'label'>;
 
 export function Label(props: LabelProps) {
-  return (
-    <label {...props}/>
-  )
+  return <label {...props} />;
 }

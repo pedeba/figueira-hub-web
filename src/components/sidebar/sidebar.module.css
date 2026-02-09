@@ -36,7 +36,11 @@
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, rgba(228, 228, 231, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(228, 228, 231, 0.1) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   border-radius: 50%;
 }
@@ -88,7 +92,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(228, 228, 231, 0.06) 0%, transparent 60%);
+  background: linear-gradient(
+    135deg,
+    rgba(228, 228, 231, 0.06) 0%,
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity var(--transition-base);
   border-radius: inherit;
@@ -107,11 +115,15 @@
 }
 
 .navLink.active {
-  background: linear-gradient(135deg, rgba(228, 228, 231, 0.1) 0%, rgba(228, 228, 231, 0.04) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(228, 228, 231, 0.1) 0%,
+    rgba(228, 228, 231, 0.04) 100%
+  );
   border-color: rgba(228, 228, 231, 0.2);
   color: var(--accent);
   text-decoration: none;
-  box-shadow: 
+  box-shadow:
     0 0 15px rgba(228, 228, 231, 0.06),
     inset 0 0 15px rgba(228, 228, 231, 0.03);
 }

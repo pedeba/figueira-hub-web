@@ -8,7 +8,7 @@
   background-color: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 
+  box-shadow:
     var(--shadow-xl),
     0 0 0 1px rgba(255, 255, 255, 0.04);
   padding: var(--space-xs);
@@ -30,7 +30,12 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(228, 228, 231, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(228, 228, 231, 0.2),
+    transparent
+  );
 }
 
 /* Arrow */
@@ -58,7 +63,11 @@
 }
 
 .item[data-highlighted] {
-  background: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-subtle) 0%,
+    transparent 100%
+  );
   color: var(--accent);
   outline: none;
   border-left: 2px solid var(--accent);
@@ -77,7 +86,11 @@
 }
 
 .itemDanger[data-highlighted] {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.08) 0%,
+    transparent 100%
+  );
   color: var(--error);
   border-left: 2px solid var(--error);
 }
