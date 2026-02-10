@@ -1,7 +1,7 @@
 import { createFileRoute, redirect } from '@tanstack/react-router';
 import { getAuthUser } from '../../lib/auth';
 import { Outlet } from '@tanstack/react-router';
-import { Sidebar } from '../../components/sidebar/index';
+import { Sidebar } from '../../components/ui/sidebar/index';
 import { Home, Volleyball, Users, ClipboardList } from 'lucide-react';
 
 export const Route = createFileRoute('/admin')({

@@ -3,9 +3,9 @@ import styles from './auth-form.module.css';
 import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form } from '../../components/form';
+import { Form } from '../../components/ui/form';
 import { useAuth } from '../../hooks/use-auth';
-import { ToastComponent } from '../../components/radix/toast';
+import { ToastComponent } from '../../components/ui/radix/toast';
 
 export const Route = createFileRoute('/_auth/register')({
   component: Register,

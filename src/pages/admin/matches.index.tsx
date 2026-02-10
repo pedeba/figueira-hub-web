@@ -1,7 +1,8 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
-import { Table } from '../../components/table';
+import { Table } from '../../components/ui/table';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter';
+import type { IMatch } from '../../types/match.type';
 import {
   EllipsisVerticalIcon,
   PencilIcon,
@@ -14,7 +15,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from '../../components/radix/dropdown-menu';
+} from '../../components/ui/radix/dropdown-menu';
 
 const matchesSearchSchema = z.object({
   _page: fallback(z.number(), 1).default(1),
@@ -29,7 +30,7 @@ export const Route = createFileRoute('/admin/matches/')({
 function Matches() {
   const { _page, _limit } = Route.useSearch();
   const navigate = useNavigate();
-  const { data: matches, isFetching } = useQuery({
+  const { data: matches, isFetching } = useQuery<IMatch[], Error>({
     queryKey: ['matches', _page],
     queryFn: async () => {
       const response = await fetch(
@@ -67,7 +68,7 @@ function Matches() {
             </Table.Row>
           </Table.Head>
           <Table.Body>
-            {matches.map((match: any) => (
+            {matches.map((match: IMatch) => (
               <Table.Row key={match.id}>
                 <Table.Cell>{match.opponent}</Table.Cell>
                 <Table.Cell>{match.status}</Table.Cell>

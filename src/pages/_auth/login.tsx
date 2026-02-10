@@ -3,11 +3,11 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './auth-form.module.css';
-import { Form } from '../../components/form';
+import { Form } from '../../components/ui/form';
 import { useAuth } from '../../hooks/use-auth';
-import { ToastComponent } from '../../components/radix/toast';
-import { PasswordToggleField } from '../../components/radix/password-toggle-field';
-import { CheckBox } from '../../components/radix/checkbox';
+import { ToastComponent } from '../../components/ui/radix/toast';
+import { PasswordToggleField } from '../../components/ui/radix/password-toggle-field';
+import { CheckBox } from '../../components/ui/radix/checkbox';
 import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter';
 
 const loginSchema = z.object({

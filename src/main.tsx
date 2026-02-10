@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { App } from './app';
 import './index.css';
 import { Toast } from 'radix-ui';
-import styles from './components/radix/toast.module.css';
+import styles from './components/ui/radix/toast.module.css';
 
 const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
